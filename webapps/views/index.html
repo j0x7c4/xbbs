@@ -1,0 +1,81 @@
+<%-include("header.html");%>
+<div class="site-wrapper">
+    <div class="site-wrapper-inner">
+        <div class="cover-container">
+            <div class="masthead clearfix">
+                <div class="inner">
+                    <h3 class="masthead-brand">inFocus</h3>
+                    <nav>
+                        <ul class="nav masthead-nav">
+                            <li class="active"><a href="#">搜索</a></li>
+                            <li><a href="#topics">话题</a></li>
+                            <%if (locals.user) {%>
+                                <li>
+                                    <a href="#"><%=user.username%></a>
+                                </li>
+                                <li><a href="/auth/logout">退出</a></li>
+                            <%}else {%>
+                                <li><a href="/auth/weibo">登录</a></li>
+                            <%}%>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="inner cover">
+                <div id="search" class="search">
+                    <form method="GET" action="/search" class="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" name="keyword">
+                            <span class="input-group-btn">
+                                <button  class="btn btn-default btn-lg" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%if (locals.topics && topics.length>=5) {%>
+        <div id="topics" class="topics">
+            <h2 class="page-header">话题</h2>
+            <div class="row topic-leve1">
+                <div class="col-md-6">
+                    <div class="topic topic-lg">
+                        <div class="topic-content" style="height:280px;">
+                            <a href="/search?keyword=<%=topics[0].query%>"><%=topics[0].title%></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="topic">
+                        <div class="topic-content">
+                            <a href="/search?keyword=<%=topics[1].query%>"><%=topics[1].title%></a>
+                        </div>
+                    </div>
+                    <div class="topic">
+                        <div class="topic-content">
+                            <a href="/search?keyword=<%=topics[2].query%>"><%=topics[2].title%></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row topic-leve2">
+                <div class="col-md-6">
+                    <div class="topic">
+                        <div class="topic-content">
+                            <a href="/search?keyword=<%=topics[3].query%>"><%=topics[3].title%></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="topic">
+                        <div class="topic-content">
+                            <a href="/search?keyword=<%=topics[4].query%>"><%=topics[4].title%></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>
+<%-include("footer.html");%>

@@ -1,0 +1,35 @@
+{
+    "port":"80",
+    "search_server":{
+        "host":"159.203.72.12",
+        "port":"8090",
+        "path":"/yacysearch.json"
+    },
+    "logger":{
+        "path":"/data/applogs/infocus",
+        "category":[
+            "utils",
+            "routes",
+            "server",
+            "app",
+            "connect"
+        ]
+    },
+    "connect":{
+        "mongodb":{
+            "url":"mongodb://localhost:27017/infocus"
+        }
+    },
+    "auth":{
+        "clientID":"xxx",
+        "clientSecret":"xxx"
+    },
+    "session":{
+        "secret":"infocus",
+        "redis": {
+            "host":"localhost",
+            "port":"6379",
+            "prefix":"infocus."
+        }
+    }
+}
