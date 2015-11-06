@@ -9,7 +9,7 @@ var passport = require('passport');
 passport.use(new WeiboStrategy({
         clientID: auth.clientID,
         clientSecret: auth.clientSecret,
-        callbackURL: "http://infocus.xiabb.me/auth/weibo/callback"
+        callbackURL: "http://search.xiabb.me/auth/weibo/callback"
     }, function(accessToken, refreshToken, profile, done) {
         userService.findOrCreate(profile, function (err, user) {
             console.log(user);
