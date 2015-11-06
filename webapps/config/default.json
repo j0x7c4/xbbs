@@ -1,12 +1,12 @@
 {
-    "port":"80",
+    "port":"3010",
     "search_server":{
         "host":"159.203.72.12",
         "port":"8090",
         "path":"/yacysearch.json"
     },
     "logger":{
-        "path":"/data/applogs/infocus",
+        "path":"/data/applogs/xbbs",
         "category":[
             "utils",
             "routes",
@@ -17,7 +17,7 @@
     },
     "connect":{
         "mongodb":{
-            "url":"mongodb://localhost:27017/infocus"
+            "url":"mongodb://localhost:27017/xbbs"
         }
     },
     "auth":{
@@ -25,11 +25,11 @@
         "clientSecret":"xxx"
     },
     "session":{
-        "secret":"infocus",
+        "secret":"xbbs",
         "redis": {
             "host":"localhost",
             "port":"6379",
-            "prefix":"infocus."
+            "prefix":"xbbs."
         }
     }
 }
