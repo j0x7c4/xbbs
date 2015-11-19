@@ -18,7 +18,8 @@ var getMongoConnection = function(config) {
 var getConnection = function(conn_config, callback){
     var mongodb = getMongoConnection(conn_config.mongodb);
     if (!mongodb) {
-        callback("Fail to get connection");
+        //callback("Fail to get connection");
+        callback(null,null);
     }
     var conn = {};
     conn.mongodb = mongodb;

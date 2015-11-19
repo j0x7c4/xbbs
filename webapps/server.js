@@ -23,7 +23,7 @@ connect.init(function(err, connect) {
      * Create HTTP server.
     */
     var http = require('http');
-    var debug = require('debug')('juwairen:server');
+    var debug = require('debug')('xbbs:server');
     var server = http.createServer(app);
 
     var config = require("config");
